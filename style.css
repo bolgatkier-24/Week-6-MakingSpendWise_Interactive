@@ -1,0 +1,488 @@
+/* ========== Google Fonts ========== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&display=swap');
+
+/* ========== Color Palette ========== */
+:root {
+    --primary: #2563eb;          /* Main blue */
+    --primary-dark: #1d4ed8;     /* Darker blue for hover */
+    --bg: #f1f5f9;               /* Soft page background */
+    --card-bg: #ffffff;          /* Card background */
+    --text: #1e293b;             /* Dark text */
+    --muted: #64748b;            /* Secondary text */
+    --border: #e2e8f0;           /* Light borders */
+    --header-bg: #1e40af;        /* Table header */
+    --row-alt: #f8fafc;          /* Alternating row */
+}
+
+/* ========== Base Styles ========== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 30px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ========== Typography ========== */
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--text);
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 6px;
+    color: var(--primary);
+}
+
+h2 {
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+p {
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+/* ========== Logo + Heading Card ========== */
+body > img {
+    display: block;
+    margin-bottom: 12px;
+    border-radius: 8px;
+}
+
+/* ========== How to use (details) ========== */
+details {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+details summary {
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--primary);
+}
+
+details p {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+/* ========== Card Sections (Box Model) ========== */
+.add-expense-section,
+.expenses-section {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* ========== Form Styling ========== */
+.add-expense-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.add-expense-section input,
+.add-expense-section select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.add-expense-section input:focus,
+.add-expense-section select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Button */
+#add-expense-btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 13px 20px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 6px;
+}
+
+#add-expense-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+/* ========== Table Styling ========== */
+.expenses-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 0.95rem;
+}
+
+.expenses-section th,
+.expenses-section td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.expenses-section th {
+    background-color: var(--header-bg);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.expenses-section th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.expenses-section th:last-child {
+    border-top-right-radius: 8px;
+}
+
+/* Alternating rows */
+.expenses-section tbody tr:nth-child(even) {
+    background-color: var(--row-alt);
+}
+
+.expenses-section tbody tr:hover {
+    background-color: #e0e7ff;
+}
+
+/* ========== Video Section ========== */
+body > div:last-of-type {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+iframe {
+    width: 100%;
+    max-width: 560px;
+    border-radius: 10px;
+    border: none;
+}
+
+/* ========== Color Palette (CSS Custom Properties) ========== */
+:root {
+    --brand-color: #2563eb;          /* Brand color */
+    --accent-color: #10b981;         /* Accent color */
+    --surface-color: #f1f5f9;        /* Surface/background color */
+    --card-bg: #ffffff;              /* Card background */
+    --text-primary: #1e293b;         /* Primary text color */
+    --text-secondary: #64748b;       /* Secondary text color */
+    --border-color: #e2e8f0;         /* Borders */
+    --sidebar-bg: #ffffff;           /* Sidebar background */
+}
+
+/* Stretch Goal: Dark Theme Override */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --brand-color: #3b82f6;
+        --accent-color: #34d399;
+        --surface-color: #0f172a;
+        --card-bg: #1e293b;
+        --text-primary: #f8fafc;
+        --text-secondary: #94a3b8;
+        --border-color: #334155;
+        --sidebar-bg: #1e293b;
+    }
+}
+
+/* ========== Base Styles ========== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--surface-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ========== Requirement 1 & 2: CSS Grid Layout for Dashboard Shell ========== */
+.dashboard-shell {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 100vh;
+}
+
+/* Sidebar Layout (Flexbox) */
+.sidebar {
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.sidebar-brand h2 {
+    color: var(--brand-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nav-item {
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.nav-item:hover, 
+.nav-item.active {
+    background-color: var(--surface-color);
+    color: var(--brand-color);
+}
+
+/* Main Content Area Container */
+.main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Layout (Flexbox) */
+.header {
+    background-color: var(--card-bg);
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.75rem;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.header-title p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.avatar {
+    background-color: var(--brand-color);
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Dashboard Cards Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+/* ========== Requirement 5: Card Micro-interactions ========== */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    /* Strict 250ms duration matching transform & box-shadow */
+    transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.card h3 {
+    color: var(--text-secondary);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.card .amount {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+}
+
+.card .status {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.status.success { color: var(--accent-color); }
+.status.warning { color: #f59e0b; }
+.status.neutral { color: var(--text-secondary); }
+
+/* Apply to both hover and keyboard focus states */
+.card:hover, 
+.card:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.08);
+    outline: none;
+}
+
+/* Secondary Section & Details Styling */
+.secondary-section {
+    padding: 0 2rem 2rem 2rem;
+}
+
+details {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+details summary {
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--brand-color);
+}
+
+details p {
+    color: var(--text-secondary);
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+/* ========== Requirement 4: Responsive Design (Below 768px) ========== */
+@media (max-width: 768px) {
+    .dashboard-shell {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        display: none; /* Collapses sidebar for compact mobile view */
+    }
+    
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.25rem 1rem;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .secondary-section {
+        padding: 0 1rem 1rem 1rem;
+    }
+}
+/* Small additions for Week 3 interactivity */
+.form-message {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    min-height: 1.2em;
+}
+.form-message.success { color: #10b981; }
+.form-message.error   { color: #ef4444; }
+.form-message.warn    { color: #f59e0b; }
+
+.btn-danger {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+}
+.btn-danger:hover { opacity: 0.9; }
+
+#budget-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-family: inherit;
+}
+#set-budget-btn {
+    background-color: var(--primary, #2563eb);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+}
