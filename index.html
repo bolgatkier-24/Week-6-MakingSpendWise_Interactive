@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Overall Dashboard Layout Container -->
+    <div class="dashboard-shell">
+
+        <!-- Sidebar / Navigation Menu -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <img src="image.png" alt="Budget Tracker logo" width="40">
+                <h2>SpendWise</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">Dashboard</a>
+                <a href="#" class="nav-item">Transactions</a>
+                <a href="#" class="nav-item">Analytics</a>
+                <a href="#" class="nav-item">Budgets</a>
+                <a href="#" class="nav-item">Settings</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+
+            <!-- Header -->
+            <header class="header">
+                <div class="header-title">
+                    <h1>Dashboard Overview</h1>
+                    <p>Track your income and expenses in one place.</p>
+                </div>
+                <div class="user-profile">
+                    <span>Welcome back</span>
+                    <div class="avatar">SW</div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content Grid (At least 6 category/metric cards) -->
+            <div class="dashboard-grid">
+
+                <!-- Card 1: Food -->
+                <div class="card" tabindex="0">
+                    <h3>Food & Dining</h3>
+                    <p class="amount" id="amount-food">$57.50</p>
+                    <span class="status" id="status-food">+5% this week</span>
+                </div>
+
+                <!-- Card 2: Transport -->
+                <div class="card" tabindex="0">
+                    <h3>Transport</h3>
+                    <p class="amount" id="amount-transport">$6.10</p>
+                    <span class="status" id="status-transport">Stable</span>
+                </div>
+
+                <!-- Card 3: Rent -->
+                <div class="card" tabindex="0">
+                    <h3>Rent & Housing</h3>
+                    <p class="amount" id="amount-rent">$250.00</p>
+                    <span class="status" id="status-rent">Paid</span>
+                </div>
+
+                <!-- Card 4: Entertainment -->
+                <div class="card" tabindex="0">
+                    <h3>Entertainment</h3>
+                    <p class="amount" id="amount-entertainment">$13.00</p>
+                    <span class="status" id="status-entertainment">On Budget</span>
+                </div>
+
+                <!-- Card 5: Remaining Budget -->
+                <div class="card" tabindex="0">
+                    <h3>Remaining Budget</h3>
+                    <p class="amount" id="amount-remaining">$0.00</p>
+                    <span class="status" id="status-remaining">—</span>
+                </div>
+
+                <!-- Card 6: Total Spent -->
+                <div class="card" tabindex="0">
+                    <h3>Total Spent</h3>
+                    <p class="amount" id="amount-total">$0.00</p>
+                    <span class="status" id="status-total">—</span>
+                </div>
+
+            </div>
+
+            <!-- Logo and Main Heading -->
+            <div class="secondary-section">
+                <img src="image.png" alt="Budget Tracker logo" width="60">
+                <h1>My Budget Tracker</h1>
+                <p>Track your income and expenses in one place.</p>
+
+                <!-- Step 4: Interactive Element -->
+                <details>
+                    <summary>How to use this tracker</summary>
+                    <p>
+                        Fill in the expense name, enter the amount,
+                        choose a category from the dropdown,
+                        then click "Add Expense" to record it.
+                    </p>
+                </details>
+            </div>
+
+            <!-- Budget input (small addition so conditionals have something to decide on) -->
+            <div class="secondary-section">
+                <div class="add-expense-section">
+                    <h2>Monthly Budget</h2>
+                    <input type="number" id="budget-input" value="500" min="0" step="10" placeholder="Budget amount">
+                    <button type="button" id="set-budget-btn">Update Budget</button>
+                    <p id="budget-status" class="form-message"></p>
+                </div>
+            </div>
+
+            <!-- Step 2: Upgraded Add Expense Section -->
+            <div class="secondary-section">
+                <div class="add-expense-section">
+                    <h2>Add Expense</h2>
+                    <form id="expense-form">
+                        <input type="text" id="expense-name" placeholder="Expense name" required>
+                        <input type="number" id="expense-amount" placeholder="Amount" min="1" step="0.01" required>
+                        <select id="expense-category">
+                            <option value="Food">Food</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Rent">Rent</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <button type="submit" id="add-expense-btn">Add Expense</button>
+                    </form>
+                    <p id="form-message" class="form-message"></p>
+                </div>
+            </div>
+
+            <!-- Step 1: Upgraded Expense Table Section -->
+            <div class="secondary-section">
+                <div class="expenses-section" id="expense-list">
+                    <h2>Your Expenses</h2>
+                    <button type="button" id="clear-all-btn" class="btn-danger" style="margin-bottom:12px;">Clear All</button>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Amount</th>
+                                <th>Category</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="expense-tbody">
+                            <!-- Rows filled by JavaScript -->
+                        </tbody>
+                    </table>
+                    <p id="empty-state" style="text-align:center;color:#64748b;padding:1rem 0;display:none;">
+                        No expenses yet. Add one using the form above.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 3: Multimedia Content (YouTube Video) -->
+            <div class="secondary-section">
+                <div class="add-expense-section">
+                    <h3>Budgeting Tips</h3>
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/-bqeNE1DOzA"
+                        title="Budgeting tips for beginners"
+                        frameborder="0"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+        </div><!-- /.main-content -->
+    </div><!-- /.dashboard-shell -->
+
+    <script src="script.js"></script>
+</body>
+</html>
